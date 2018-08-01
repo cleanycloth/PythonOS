@@ -1,0 +1,10 @@
+To navigate around Kit, use these commands:
+
+Save: CTRL+S
+Close: ALT+X or CTRL+Q
+Menu: F1
+
+To navigate around the menu, use the arrow keys and press enter to confirm your
+selection.
+
+The mouse is also usable.

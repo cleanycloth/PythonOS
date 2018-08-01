@@ -1,0 +1,214 @@
+#notes section:
+#do save/load
+#etc.
+
+from time import sleep
+from random import randint, choice
+from winsound import Beep as beep
+from os import system, path
+import vlc
+import _thread
+from configparser import ConfigParser
+config = ConfigParser()
+areasel = ""
+system("mode con: cols=80 lines=25")
+
+def gendata():
+    config['UTG2 Save File'] = {'Health': '20',
+                                'EnemyHealth': '20',
+                                'Strength': '0',
+                                'Food': '2',
+                                'Continue': 'no',
+                                'Money': '0'}
+    config.write(open(name + ".ini",'w'))
+    
+def splash():
+    system('cls')
+    logo = """
+   __  __      __  _ __  __         __
+  / / / /___  / /_(_) /_/ /__  ____/ /
+ / / / / __ \/ __/ / __/ / _ \/ __  / 
+/ /_/ / / / / /_/ / /_/ /  __/ /_/ /  
+\_______ /_/\__/_/___/_/\___/\__,_/   
+ /_  __/__  _  __/ /_
+  / / / _ \| |/_/ __/
+ / / /  __/>  </ /_
+/_/__\\___\/_/|_|\__/             ___
+  / ____/___ _____ ___  ___     |__ \ 
+ / / __/ __ `/ __ `__ \/ _ \    __/ / 
+/ /_/ / /_/ / / / / / /  __/   / __/  
+\____/\__,_/_/ /_/ /_/\___/   /____/  
+    """
+    print(logo)
+    print("Version 0.1 Pre-Alpha")
+    print("(C) 2016 Aidan Rayner")
+    #vlc.MediaPlayer("loop.s3m").play() <<<<<<<<<<<<<< undo comment
+    while 1:
+        name = input("Please enter your username: ")
+        if len(name) == 0:
+            print("You can't have a blank username!")
+        else:
+            if not path.exists(name + ".ini"):
+                open(name + ".ini",'w').close()
+                print("New user profile created.")
+                print("As you are a new user, please take the time to read the help file!\n(Option 4 on the main menu)")
+                sleep(5)
+            else:
+                print("Welcome back, " + name + "!")
+                #sleep(1) <<<<<<<<<<<<<< undo comment
+            break
+    return name
+
+def gethelp():
+    system('cls')
+    print("\n")
+    print("-"*79)
+    print("Help - Untitled Text Game 2".rjust(56))
+    print("-"*79)
+    print("\n")
+    print("    Welcome to help.\n\n")
+    print("    Supported commands (outside of given prompts):")
+    print("    s (save), q (save and quit), stats (health, bread amount, etc)\n")
+    print("    General info:")
+    print("    This is a text based adventure game based around a JRPG theme. We're\n    currently in early pre-alpha, so please report any bugs!!\n")
+    input("    Type q to return to the main menu: ")
+
+def leave():
+    sure = input("Are you sure you want to quit? ;-; ")
+    if sure.lower() == "y":
+        print("Quitting to prompt.")
+        exit()
+
+def alert():
+    system('cls')
+    vlc.MediaPlayer("spotted.nsf").play()
+    print(" "*80)
+    print("\n\n\n\n\n")
+    print("""
+                                        __
+                                       / /
+                                      / / 
+                                     /_/  
+                                    (_)   """)
+    sleep(0.8)
+    print("You've been spotted.".rjust(48))
+    sleep(0.8)
+    system('cls')
+
+def menu():
+    system('cls')
+    print("\n")
+    print("-"*79)
+    print("Main Menu - Untitled Text Game 2".rjust(57))
+    print("-"*79)
+    print("\n    1. Start a new game\n\n    2. Load a saved game\n\n    3. Continue (after death)\n\n    4. Help\n\n    5. Quit\n\n")
+    menusel = input("\n\n    Select an option: ")
+    return menusel
+
+
+def selectarea():
+    while 1:
+        startlist = ['1','2','3']
+        system('cls')
+        print("\n")
+        print("-"*79)
+        print("Start a new game - Untitled Text Game 2".rjust(60))
+        print("-"*79)
+        print("\n    Where do you want to start, " + name + "?\n\n    1. Town Village\n\n    2. The Forest\n\n    3. The Nearby Castle")
+        areasel = input("\n\n    Select an option: ")
+        if areasel in startlist:
+            return areasel         
+        print("\n    Invalid input.")
+        sleep(2)
+
+def loadgame():
+    for x in range(12):
+        print("    Loading data |", end='\r'), sleep(0.05)
+        print("    Loading data /", end='\r'), sleep(0.05)
+        print("    Loading data -", end='\r'), sleep(0.05)
+        print("    Loading data \\", end='\r'), sleep(0.05)
+    config.read(name + ".ini")
+    if len(open(name + ".ini",'r').read()) == 0:
+        print("    There is no data to load!")
+        sleep(2)
+        #return False
+    for x in range(12):
+        print("    Checking data integrity |", end='\r'), sleep(0.05)
+        print("    Checking data integrity /", end='\r'), sleep(0.05)
+        print("    Checking data integrity -", end='\r'), sleep(0.05)
+        print("    Checking data integrity \\", end='\r'), sleep(0.05)
+    if not 'UTG2 Save File' in config.sections():
+        print("    Data file is invalid. Cannot load save.")
+        sleep(2)
+        #return False
+    print("    Data check passed. Your data has been loaded successfully.")
+    sleep(2)
+    print
+
+def loadarea(place):
+    system('cls')
+    print("\n"*9)
+    print("-"*79)
+    loadtext = "Now loading: " + place
+    print(loadtext.center(80))
+    print("-"*79)
+
+def continuegame():
+    if len(open(name + ".ini",'r').read()) == 0:
+        print("    There is no data to load!")
+    elif str(config['UTG2 Save File']['Continue']) == "no":
+           print("    You do not have a continue point to load from.")
+
+def forest1():
+    forestlist = ['1','2','3','4']
+    system('cls')
+    print("\n")
+    print("-"*79)
+    print("\n")
+    print("    You wander off into the forest. Without a map, you become a bit lost.")
+    print("    You think you can see something off into the distance, but you're not")
+    print("    sure what it is.")
+    print("\n")
+    print("    What do you wish to do?")
+    print("\n")
+    print("    1. Investigate the odd looking distant...thing\n    2. Wander around the forest a bit more\n    
+    
+
+#---------------------
+name = splash()
+while 1:
+    option = menu()
+    if option == "1":
+        gendata()
+        areasel = selectarea()
+        break
+    elif option == "2":
+        loadgame()
+    elif option == "3":
+        continuegame()
+        break
+    elif option == "4":
+        gethelp()
+    elif option == "5":
+        leave()
+    else:
+        print("\n    Invalid input.")
+        sleep(2)
+if areasel == "1":
+    loadarea("The Town")
+    areasel = "town"
+elif areasel == "2":
+    loadarea("The Forest")
+    forest1()
+elif areasel == "3":
+    loadarea("The Nearby Castle")
+    areasel = "castle"
+elif areasel == "4":
+    loadarea("Previous Save")
+
+
+
+
+
+
+

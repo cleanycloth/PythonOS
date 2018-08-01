@@ -1,0 +1,8 @@
+To effectively use Nano, remember the following key combos:
+
+CTRL+X - Save and Exit
+CTRL+W - Search for string
+CTRL+O - Save
+
+You can use the mouse to select text, however the keyboard is recommended
+instead for this.

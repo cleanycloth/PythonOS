@@ -1,0 +1,139 @@
+Hello, and welcome to
+    ____        __  __                ____  _____
+   / __ \__  __/ /_/ /_  ____  ____  / __ \/ ___/
+  / /_/ / / / / __/ __ \/ __ \/ __ \/ / / /\__ \ 
+ / ____/ /_/ / /_/ / / / /_/ / / / / /_/ /___/ / 
+/_/    \__  /\__/_/ /_/\____/_/ /_/\____//____/
+      /____/                                     !
+
+Thanks for testing this beta release. This is, of course, a work in
+progress so there's a LOT more to be done, but we're getting there!
+
+Note: If you're running the VM and updating the code, simply save it, type
+reboot or restart in the VM, and the VM will load the new version of the code.
+
+Alternatively, type fastreboot to skip the BIOS and OS reload stage, and
+perform a quick OS reload. This will still fully reload the codebase.
+
+First off, well done for getting this far. Here's a command list 
+of what is currently available in PythonOS:
+
+help (duh)
+help edit
+edit
+ver
+logo
+list programs
+dir
+cd
+magic 8 ball
+clear/cls
+apt-get install
+open
+shutdown/exit
+reboot/restart
+scandisk
+reset
+logout
+createuser
+deleteuser
+fastreboot
+rootdir
+cortana
+search
+py
+time
+unit1test
+textadv
+list users
+listvar
+runtest
+
+
+Next is a list explaining what each command does.
+
+Help:
+You're looking at it.
+
+Help edit:
+Loads the help for the Kinesics (Kit) or Nano command line text editor,
+depending on your host OS (which you're looking at right now!)
+
+Edit:
+Launches Kinesics/Nano. The application, and all files saved with it, is
+located inthe Documents directory. Note that if you want to put spaces in the
+file name, you will need to encase the file name in quotation marks ("").
+
+Ver:
+Shows the version of the current PythonOS release.
+
+Logo:
+Displays the PythonOS logo as shown up top and on bootup.
+
+List Programs:
+Shows a list of applications you have "installed".
+
+dir/ls:
+Lists the files in the current directory.
+
+cd:
+Changes the current directory. If coupled with "..", it will go down one
+directory.
+
+Magic 8 Ball:
+Magic 8 Ball is a program also written by RotoWare.
+It is a comprehensive and highly detailed 8 Ball simulator, which has 
+additional functions such as being able to search for the weather 
+(and in a certain place), define words, and more.
+
+Clear/cls:
+Clears the screen.
+
+Apt-get Install:
+This is where you "install" programs. Unfortunately, only programs that are 
+installed on the machine will work. I have tested it with Notepad, the full 
+Office 2013/16 suite (will work on older versions), and Google Chrome/Firefox.
+If you know the executeable name, and it will launch in CMD just by typing 
+it in any directory, it will work here. The program name gets saved into a 
+text document, which can be pulled up by running the 'list programs' command.
+
+Open:
+Opens an "installed" program when defined. If the program is not "installed",
+it will not run until you "download" it with 'apt-get install'.
+
+Shutdown/Exit:
+Self explanitory.
+
+Reboot/Restart:
+Again, self explanitory.
+
+Fastreboot:
+Restarts PythonOS and reloads all code but without going through the BIOS and
+loading screen. Think of it as shift+restart from Windows 95/98/ME. Useful
+for quickly reloading code.
+
+Scandisk:
+Checks the hard drive for errors. This usually pops up when you incorrectly
+shut down the VM (i.e. by hitting the close button at the top of the window).
+
+Reset:
+Deletes all PythonOS information including all files from Magic 8 Ball. The
+system automatically resets once the operation is complete.
+
+Logout:
+Logs the current user out and drops them back to the login prompt.
+
+Createuser:
+Asks the user for a new username and password, which is stored in the "Users"
+folder. Note that passwords are currently stored in plaintext inside the user
+file.
+
+Cortana:
+Yep, that's right. Cortana in Python. Obviously it will NEVER be as good as
+the real one since I can't add in voice recognition but it's still a cool
+thing nonetheless. :P
+
+Thanks for reading this help text. This will get regularly updated with each
+new build of PythonOS.
+
+And of course, thanks again for investing your time into PythonOS.
