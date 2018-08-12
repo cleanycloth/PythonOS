@@ -275,7 +275,7 @@ while 1:
         workdir()
         chdir('Documents')
         owd2 = owd.replace(" ", "\\ ") + "/"
-        system(runtext + 'pythonoshelp.txt')
+        system(runtext + 'pythonoshelp.hlp')
         chdir(owd1)
     elif main == "help edit":
         workdir()
@@ -306,7 +306,7 @@ while 1:
         chdir(owd1)
     elif main == "list commands":
         workdir()
-        system(readtext + ' commands.txt')
+        system(readtext + ' commands.lst')
         chdir(owd1)
     elif main == "list users":
         owd1 = getcwd()

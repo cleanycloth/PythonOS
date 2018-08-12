@@ -23,6 +23,7 @@ def writefiles(filename, data):
     file = open(filename, "w")
     file.write(data), file.close()
 filelist = (['bios.py',
+             'commands.lst',
              'checkfiles.py',
              'cortana.py',
              'loadanimation.py',
@@ -70,6 +71,5 @@ try:
 except ImportError:
     print("Failed to run Scandisk.")
     sleep(1)
-    remove("safeshutdown.txt")
 #print(Fore.WHITE + Style.NORMAL + "Log saved to Documents/testlog.log")
 #sleep(3)

@@ -4,9 +4,10 @@ from platform import system as osdetect
 error = 0
 filelist = (['Documents/k.exe',
             'Documents/m8b5.py',
-            'Documents/khelp.txt',
-            'Documents/nhelp.txt',
-            'Documents/pythonoshelp.txt',
+            'Documents/khelp.hlp',
+            'Documents/nhelp.hlp',
+            'Documents/pythonoshelp.hlp',
+            'commands.lst'
             'scandisk.py',
             'login.py',
             'loadanimation.py',
