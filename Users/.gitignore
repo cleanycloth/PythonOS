@@ -1,0 +1,3 @@
+#workaround to keep this folder empty
+*
+!.gitignore
