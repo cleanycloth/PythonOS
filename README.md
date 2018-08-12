@@ -13,10 +13,15 @@ This program uses some external programs and code:
  - VLC loader program by the VideoLan Project: https://wiki.videolan.org/PythonBinding
  - Kinesics Text Editor by the Joe Lowe Project: http://turtlewar.org/projects/editor/
 
+Note: I am currently looking into removing the VLC requirement as it's clunky and very big. No ETA on this however.
 
 Changelog:
 
-Unfortunately, I didn't think to write a changelog for anything below 1.7f of the program, so we'll start from there.
+1.7g:
+Changed file structure. Help files are now .hlp, permanent text files (such as commands.txt) are now .lst files, and temporary text files are still .txt.
+ScanDisk was modified to capitalise the "D" to make it just that little bit more like the Windows original.
+Users folder was given a .gitignore to make sure GitHub actually sees it and uploads it, otherwise PythonOS will have a fit since it'll be missing.
 
 1.7f:
 Uploaded to GitHub, finally. Removed some unnecessary files from the upload and reset the program for first use.
+Start of changelog. Sorry ;-;
