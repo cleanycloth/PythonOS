@@ -12,8 +12,9 @@ This program uses some external programs and code:
 
  - VLC loader program by the VideoLan Project: https://wiki.videolan.org/PythonBinding
  - Kinesics Text Editor by the Joe Lowe Project: http://turtlewar.org/projects/editor/
+ - Colorama text colouring scripts by Arnon Yaari: https://github.com/tartley/colorama
 
-Note: I am currently looking into removing the VLC requirement as it's clunky and very big. No ETA on this however.
+Note: I am currently looking into removing the VLC requirement as it's clunky and very big, along with removing the Kinesics text editor. No ETA on this however.
 
 Changelog:
 
