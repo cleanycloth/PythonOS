@@ -1,0 +1,7 @@
+#ignore all temporary configs
+*.txt
+#ignore all user files
+*.admin
+*.limited
+#ignore compiled python stuff
+__pycache__
