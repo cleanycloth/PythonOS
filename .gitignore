@@ -5,3 +5,5 @@
 *.limited
 #ignore compiled python stuff
 __pycache__
+#ignore lock file
+lock
