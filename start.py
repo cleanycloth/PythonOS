@@ -1,4 +1,3 @@
-
 from os import system, path, remove
 from platform import system as osdetect
 from time import sleep

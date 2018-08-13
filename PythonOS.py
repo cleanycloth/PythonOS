@@ -44,13 +44,13 @@ if osdetect() == "Windows":
     runtext = 'k.exe '
     runprog = "start"
     readtext = "more"
-    helpfile = " khelp.txt"
+    helpfile = " khelp.hlp"
 else:
     runpy = 'python3'
     runtext = 'nano ' + str(owd2)
     runprog = ""
     readtext = "head"
-    helpfile = "nhelp.txt"
+    helpfile = "nhelp.hlp"
 
 #Define necessary functions:
 def writefiles(filename, data):
