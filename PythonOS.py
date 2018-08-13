@@ -18,10 +18,8 @@ from random import randint
 from getpass import getpass
 from glob import glob
 from webbrowser import open as webopen
-try:
-    import vlc
-except:
-    print("")
+from playsound import playsound
+import _thread
 try:
     from loadanimation import load
     from login import login
@@ -127,26 +125,21 @@ def sounds(sndgrp):
     try:
     #Defines the soundset for the OS. Sound group 2 does not work under linux but instead silently passes through.
         if sndgrp == 0:
-            vlc.MediaPlayer("Sounds/start.wav").play()
+            playsound('Sounds/start.wav')
         elif sndgrp == 1:
-            vlc.MediaPlayer("Sounds/shut.wav").play()
+            playsound('Sounds/shut.wav')
         elif sndgrp == 2:
             beep(800, 500), beep(1200, 500)
         elif sndgrp == 3:
-            vlc.MediaPlayer("Sounds/logoff.wav").play()
+            playsound('Sounds/logoff.wav')
         elif sndgrp == 4:
-            vlc.MediaPlayer("Sounds/logon.wav").play()
+            playsound('Sounds/logon.wav')
         elif sndgrp == 5:
-            vlc.MediaPlayer("Sounds/uac.wav").play()
+            playsound('Sounds/uac.wav')
     except KeyboardInterrupt:
         exit()
-    except:
-        global soundwarning
-        if soundwarning == 0:
-            print("\nERROR: Unable to play sound. Sound will be disabled.")
-            soundwarning += 1
 def permerror():
-    sounds(5)
+    _thread.start_new_thread( sounds, (5,) )
     print("\nYou do not have the required permissions to run this command.\n")
     
 #Main runtime code starts here
@@ -208,7 +201,7 @@ sleep(1)
 writefiles("fastboot.txt","0")
 print("Welcome, to..."), sleep(0.2)
 logo()
-sounds(0)
+_thread.start_new_thread( sounds, (0,) )
 print("\nVersion " + version + " Beta - Copyright RotoWare " + year), sleep(0.5)
 print("\nBuild Date: " + build), sleep(0.5)
 if len(open("lastlogin.txt").read()) == 0:
@@ -232,7 +225,7 @@ while 1:
         chdir(owd)
         login()
         writefiles("lastlogin.txt",asctime())
-        sounds(4)
+        _thread.start_new_thread( sounds, (4,) )
     if not res == 1:
         workdir()
         user = open('currentuser.txt').read()
@@ -400,7 +393,7 @@ while 1:
         print("\nBroadcast from " + user1 + "@" + compname + " (pts/0) (" + asctime() + ")")
         print("\nThe system is going down NOW!")
         chdir(owd)
-        sounds(1)
+        _thread.start_new_thread( sounds, (1,) )
         sleep(2)
         print("\nPowering off...")
         remove("lock")
@@ -413,7 +406,7 @@ while 1:
         print("\nBroadcast from " + user1 + "@" + compname + " (pts/0) (" + asctime() + ")")
         print("\nThe system is going down for reboot NOW!")
         chdir(owd)
-        sounds(1)
+        _thread.start_new_thread( sounds, (1,) )
         sleep(3)
         if not res == 1:
             remove("lock")
@@ -456,7 +449,7 @@ while 1:
                 print("Returning to prompt.")
     elif main == "logout":
         print("\nLogging out.\n")
-        sounds(3)
+        _thread.start_new_thread( sounds, (3,) )
         loggedout = 1
     elif main == "createuser":
         if ".limited" in user:
