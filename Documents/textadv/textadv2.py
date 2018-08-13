@@ -14,6 +14,8 @@ from time import sleep
 from random import randint, choice
 from winsound import Beep as beep
 from os import system, path, remove
+from playsound import playsound
+import _thread
 from platform import system as syscheck
 from configparser import ConfigParser
 if syscheck() == "Windows":
@@ -56,22 +58,22 @@ def gendata():
                                 
     config.write(open(name + ".ini",'w'))
 
-#def playsound(sound):
-    #if sound == 0:
-        #vlc.MediaPlayer("tada.wav").play()
-    #if sound == 1:
-        #vlc.MediaPlayer("chord.wav").play()
-    #if sound == 2:
-        #vlc.MediaPlayer("loop.s3m").play()
-    #if sound == 3:
-        #vlc.MediaPlayer("gameover.nsf").play()
-    #if sound == 4:
-        #vlc.MediaPlayer("spotted.nsf").play()
-    #if sound == 5:
-        #vlc.MediaPlayer("transition.wav").play()
+def sounds(sound):
+    if sound == 0:
+        playsound('tada.mp3')
+    if sound == 1:
+        playsound('chord.wav')
+    if sound == 2:
+        playsound('loop.mp3')
+    if sound == 3:
+        playsound('gameover.mp3')
+    if sound == 4:
+        playsound('spotted.mp3')
+    if sound == 5:
+        playsound('transition.wav')
 
 def splash():
-    #playsound(2)
+    _thread.start_new_thread( sounds, (2,) )
     system('cls')
     logo = """
    __  __      __  _ __  __         __
@@ -147,7 +149,7 @@ def scribe():
     print("Scribe - Untitled Text Game 2".center(80))
     print("-"*79)
     print("\n")
-    print("    In a puff of smoke, a Kindle™ tablet (other brands are available)")
+    print(u"    In a puff of smoke, a Kindle™ tablet (other brands are available)")
     print("    appears in your hand. On the screen are your stats.")
     print("\n")
     print("    Unfortunately for you, the tablet crashes.") ### CHANGE TO SET WHEN YOU LOAD STUFF
@@ -171,7 +173,7 @@ def retry():
 
 def alert():
     system('cls')
-    #playsound(4)
+    _thread.start_new_thread( sounds, (4,) )
     print(" "*80)
     print("\n\n\n\n\n")
     print("""
@@ -244,7 +246,7 @@ def loadgame(loadtype):
         config.read(name + ".ini")
 
 def loadarea(place):
-    #playsound(5)
+    _thread.start_new_thread( sounds, (5,) )
     system('cls')
     print("\n"*9)
     print("-"*79)
@@ -261,7 +263,7 @@ def continuegame():
         print("    Data file is invalid. Cannot load save.")
         sleep(2)
     elif str(config['UTG2 Save File']['Continue']) == "no":
-        #playsound(1)
+        _thread.start_new_thread( sounds, (1,) )
         print("    You do not have a continue point to load from.")
         sleep(2)
 
@@ -473,7 +475,7 @@ def death(deathvar):
         print("\n"), sleep(0.1)
     system('cls')
     print("\n")
-    #playsound(3)
+    _thread.start_new_thread( sounds, (3,) )
     if deathvar == 1:
         print("    Unfortunately for you, the monster has killed you off in a rather")
         print("    spectacular fashion. You have failed your mission, and the rest of")
@@ -506,7 +508,7 @@ def draw():
         print("\n"), sleep(0.1)
     system('cls')
     print("\n")
-    #playsound(3)
+    _thread.start_new_thread( sounds, (3,) )
     print("    Uh...well, this is awkward. You both died at the same time.")
     print("    I guess you didn't win but at the same time you didn't lose...")
     print("    I've got no idea. Sorry. Probably best if you retry.")
@@ -566,7 +568,7 @@ def win(winvar):
         system('cls')
         print("\n")
         print("    Your pet, " + petname + ", is very happy with its new name.\n\n")
-    #playsound(0)
+    _thread.start_new_thread( sounds, (0,) )
     endtext = "    You win!"
     for x in range(len(endtext)):
         print(endtext[0:x+1], end='\r'), sleep(0.1)
@@ -706,9 +708,8 @@ def fight():
                     comfort()
             else:
                 death(2)
-        if not fightsel == "1":
-            print("    Invalid input.")
-            sleep(2)
+        print("    Invalid input.")
+        sleep(2)
 
 def comfort():
     while 1:
@@ -748,7 +749,7 @@ while 1:
         loadgame("check")
         config.read(name + ".ini")
         if 'UTG2 Save File' in config.sections():
-            #playsound(1)
+            _thread.start_new_thread( sounds, (1,) )
             print("    WARNING! Save file detected! Continuing will overwrite your")
             confirm = input("    save PERMANENTLY! Are you sure you want to continue? [y/N]: ")
             if confirm == "y":
