@@ -33,7 +33,7 @@ rand = 0
 firstboot = 0
 owd = getcwd()
 owd2 = ""
-version = "1.8"
+version = "1.8c"
 build = "13/08/18 @ 1:37am"
 year = "2015-2018"
 compname = "pOS"
@@ -236,7 +236,18 @@ while 1:
             user1 = user.replace(".limited", "")
         main = input(user1 + "@" + compname + " | " + owd1 + ">")
         loggedout = 0
-    if main == "cortana":
+    if "play" in main[0:4]:
+        main = main.replace(" ","").replace("play","").replace("_"," ")
+        if len(main) == 0:
+            main = input("Please specify a sound to play: ")
+        def s():
+            try:
+                print("Playing sound file: \"" + main + "\"")
+                playsound(main)
+            except:
+                print("Unable to play the sound.")
+        _thread.start_new_thread( s, () )
+    elif main == "cortana":
         workdir()
         system(runpy + ' cortana.py')
         chdir(owd1)
@@ -267,13 +278,13 @@ while 1:
     elif main == "help":
         workdir()
         chdir('Documents')
-        owd2 = owd.replace(" ", "\\ ") + "/"
+        owd2 = owd + "\\"
         system(runtext + 'pythonoshelp.hlp')
         chdir(owd1)
     elif main == "help edit":
         workdir()
         chdir('Documents')
-        owd2 = owd.replace(" ", "\\ ") + "/"
+        owd2 = owd + "\\"
         system(runtext + helpfile)
         chdir(owd1)
         main = ""
@@ -283,9 +294,9 @@ while 1:
             main = input("Please specify a file name: ")
         workdir()
         chdir('Documents')
-        owd2 = owd.replace(" ", "\\ ") + "/"
+        owd2 = owd + "\\"
         main = main.replace("edit", "")
-        system(runtext + main)
+        system(runtext + "\"" + str(owd2) + main + "\"")
         chdir('..')
         chdir(owd1)
     elif main == "ver":
@@ -348,11 +359,13 @@ while 1:
     elif main == "clear" or main == "cls":
         screenclear()
     elif "apt-get install " in main[0:16] or "sudo apt-get install " in main[0:21]:
+        print("This command is deprecated. Please use apt install instead.")
+    elif "apt install " in main[0:12] or "sudo apt install " in main[0:17]:
         if ".limited" in user:
             permerror()
         else:
-            main = main.replace("sudo apt-get install ", "")
-            main = main.replace("apt-get install ", "")
+            main = main.replace("sudo apt install ", "")
+            main = main.replace("apt install ", "")
             if len(main) == 0:
                 print("You need to specify the program you want to install first.")
             else:
