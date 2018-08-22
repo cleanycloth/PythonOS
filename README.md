@@ -16,6 +16,13 @@ Note: I am currently looking into removing the Kinesics text editor requirement.
 
 Changelog:
 
+1.8a/b/c:
+Added new playback command.
+Changed apt-get to apt, like with the recent changes to Linux.
+Changed .gitignore to also ignore text adventure save files.
+Fixed some spelling errors in the text adventure game.
+Changed the way edit works - instead of defaulting to the documents folder, it now allows you to edit any file in any directory.
+
 1.8:
 Finally removed the VLC requirement and switched to a much nicer audio player called Playsound. From over 300K to 4K, perfect.
 Sorry for all the commits, still working this thing out :P
