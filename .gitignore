@@ -7,3 +7,5 @@
 __pycache__
 #ignore lock file
 lock
+#ignore ini files
+*.ini
