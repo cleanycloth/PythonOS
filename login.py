@@ -6,6 +6,7 @@ def login():
         passw1 = open('Users/' + user1, "r")
         if not passw in passw1:
             print("Invalid password.")
+            login()
         else:
             print("\nLogged in as " + user + ".\n")
             file = open('currentuser.txt', "w")
