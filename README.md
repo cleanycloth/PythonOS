@@ -16,6 +16,9 @@ Note: I am currently looking into removing the Kinesics text editor requirement.
 
 Changelog:
 
+1.8d:
+Fixed critical login bug. Reduced the time it takes for the prompt to appear and blank inputs at the prompt no longer trigger the "unknown command" text.
+
 1.8a/b/c:
 Added new playback command.
 Changed apt-get to apt, like with the recent changes to Linux.

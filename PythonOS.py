@@ -33,7 +33,7 @@ rand = 0
 firstboot = 0
 owd = getcwd()
 owd2 = ""
-version = "1.8c"
+version = "1.8d"
 build = "13/08/18 @ 1:37am"
 year = "2015-2018"
 compname = "pOS"
@@ -220,7 +220,7 @@ if not path.exists("Users/public.limited"):
 noadmin = 0
 while 1:
     wintitle()
-    sleep(0.2)
+    sleep(0.1)
     if loggedout == 1:
         chdir(owd)
         login()
@@ -247,6 +247,8 @@ while 1:
             except:
                 print("Unable to play the sound.")
         _thread.start_new_thread( s, () )
+    elif main.replace(" ","") == "":
+        print("",end='\r')
     elif main == "cortana":
         workdir()
         system(runpy + ' cortana.py')
