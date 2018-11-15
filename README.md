@@ -4,7 +4,9 @@ A quick and dirty operating system lookalike program made in Python, originally 
 Prerequisites:
  - Some form of Python 3, but I'd recommend the latest.
  - For Linux, nano is required for the text editor, because I detest Vim. Sorry. And since macOS has it by default it makes things easier.
- - Windows has been tested for compatibility, but it *should* work on Linux and macOS as well. Though, it's been a while since I last tested it.
+ - Windows has been tested for compatibility, but it *should* work on Linux and macOS as well.** Though, it's been a while since I last tested it.
+ 
+**NOTE: There are a lot of bugs when used in Linux, macOS untested. I'll get on to fixing those as soon as I can.
 
 This program uses some external programs and code:
 
