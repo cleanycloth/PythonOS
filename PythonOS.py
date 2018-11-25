@@ -7,7 +7,7 @@
 
 #Load modules and set variables required for defined functions:
 from time import sleep, asctime
-from os import path, system, getcwd, chdir, remove
+from os import path, system, getcwd, chdir, remove, rename
 from platform import system as osdetect
 if osdetect() == "Windows":
     from winsound import Beep as beep
@@ -29,12 +29,14 @@ except:
     login = ""
     logo = ""
     startlogo = ""
+
 rand = 0
 firstboot = 0
+sysdir = getcwd()
 owd = getcwd()
 owd2 = ""
-version = "1.8d"
-build = "07/11/18 @ 10:21pm"
+version = "1.9"
+build = "25/11/18 @ 10:01am"
 year = "2015-2018"
 compname = "pOS"
 filelist = ['safeshutdown.txt','programlist.txt','Documents/m8ballusernames.txt','Documents/m8ballresults.txt','currentuser.txt','fastboot.txt','lastlogin.txt']
@@ -124,6 +126,7 @@ def checkfiles():
 def sounds(sndgrp):
     try:
     #Defines the soundset for the OS. Sound group 2 does not work under linux but instead silently passes through.
+        workdir()
         if sndgrp == 0:
             playsound('Sounds/start.wav')
         elif sndgrp == 1:
@@ -136,6 +139,7 @@ def sounds(sndgrp):
             playsound('Sounds/logon.wav')
         elif sndgrp == 5:
             playsound('Sounds/uac.wav')
+        chdir(owd1)
     except KeyboardInterrupt:
         exit()
 def permerror():
@@ -149,7 +153,7 @@ try:
 except:
     fast = "0"
 if not "1" in fast:
-    chdir(owd)
+    chdir(sysdir)
     if not path.exists("bios.py"):
         print("\n\nBIOS failure detected. The BIOS file needs to be reinstalled.\n\nSystem halted.")
         print("\nPress Control+C to restart.")
@@ -222,13 +226,27 @@ while 1:
     wintitle()
     sleep(0.1)
     if loggedout == 1:
-        chdir(owd)
+        chdir(sysdir)
         login()
+        user = open('currentuser.txt').read()
         writefiles("lastlogin.txt",asctime())
         _thread.start_new_thread( sounds, (4,) )
+    if not path.exists(owd + "/Users/" + user):
+        print("\n" + "-"*36 + "WARNING!" + "-"*36)
+        print("Illegal permission level change detected. Reverting changes.")
+        print("-"*36 + "WARNING!" + "-"*36 + "\n")
+        workdir()
+        chdir("Users")
+        try:
+            if ".admin" in user:
+                rename(user1 + ".limited", user)
+            else:
+                rename(user1 + ".admin", user) 
+        except:
+            print("Error changing permissions. The user may have been deleted.")
+        chdir(owd1)
     if not res == 1:
         workdir()
-        user = open('currentuser.txt').read()
         chdir(owd1)
         if ".admin" in user:
             user1 = user.replace(".admin", "")
