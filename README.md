@@ -2,8 +2,8 @@
 A quick and dirty operating system lookalike program made in Python, originally as a joke between myself and a friend in college a couple of years ago.
 
 Prerequisites:
- - Some form of Python 3, but I'd recommend the latest.
- - For Linux, nano is required for the text editor, because I detest Vim. Sorry. And since macOS has it by default it makes things easier.
+ - Some form of Python 3, but I'd recommend the latest. Python 2 is not, and will not be supported. It's crap.
+ - For Linux, nano is required for the text editor, because I detest Vim. Sorry. And since macOS has it by default it makes things easier. One of these days I'll probably make a way of detecting your default editor or something, we'll see.
  - Windows has been tested for compatibility, but it *should* work on Linux and macOS as well.** Though, it's been a while since I last tested it.
  
 **NOTE: There are a lot of bugs when used in Linux, macOS untested. I'll get on to fixing those as soon as I can.
@@ -16,7 +16,7 @@ This program uses some external programs and code:
 
 Note: I am currently looking into removing the Kinesics text editor requirement. No ETA on this however.
 
-Changelog:
+# Changelog:
 
 1.8d:
 Fixed critical login bug. Reduced the time it takes for the prompt to appear and blank inputs at the prompt no longer trigger the "unknown command" text.
