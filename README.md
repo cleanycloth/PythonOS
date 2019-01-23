@@ -6,7 +6,7 @@ Prerequisites:
  - For Linux, nano is required for the text editor, because I detest Vim. Sorry. And since macOS has it by default it makes things easier. One of these days I'll probably make a way of detecting your default editor or something, we'll see.
  - Windows has been tested for compatibility, but it *should* work on Linux and macOS as well.** Though, it's been a while since I last tested it.
  
-**NOTE: macOS bugs have mostly been ironed out now. Linux remains mostly untested but should work better than version 1.9.
+**NOTE: macOS bugs have mostly been ironed out now. Linux remains mostly untested but should work better than version 1.9. See below for known issues.
 
 This program uses some external programs and code:
 
@@ -53,4 +53,8 @@ Users folder was given a .gitignore to make sure GitHub actually sees it and upl
 
 1.7f:
 Uploaded to GitHub, finally. Removed some unnecessary files from the upload and reset the program for first use.
-Start of changelog. Sorry ;-;
+Start of GitHub changelog.
+
+# Known Issues
+
+Background colours for Scandisk and such are currently broken in Linux and macOS.
