@@ -18,7 +18,7 @@ perform a quick OS reload. This will still fully reload the codebase.
 First off, well done for getting this far. Here's a command list 
 of what is currently available in PythonOS:
 
-help (duh)
+help
 help edit
 edit
 ver
@@ -42,12 +42,12 @@ rootdir
 cortana
 search
 py
-time
+time/date
 unit1test
 textadv
 list users
 listvar
-runtest
+runtests
 
 
 Next is a list explaining what each command does.

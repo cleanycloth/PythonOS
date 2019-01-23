@@ -6,7 +6,7 @@ Prerequisites:
  - For Linux, nano is required for the text editor, because I detest Vim. Sorry. And since macOS has it by default it makes things easier. One of these days I'll probably make a way of detecting your default editor or something, we'll see.
  - Windows has been tested for compatibility, but it *should* work on Linux and macOS as well.** Though, it's been a while since I last tested it.
  
-**NOTE: There are a lot of bugs when used in Linux, macOS untested. I'll get on to fixing those as soon as I can.
+**NOTE: macOS bugs have mostly been ironed out now. Linux remains mostly untested but should work better than version 1.9.
 
 This program uses some external programs and code:
 
@@ -17,6 +17,19 @@ This program uses some external programs and code:
 Note: I am currently looking into removing the Kinesics text editor requirement. No ETA on this however.
 
 # Changelog:
+
+2.0 (The macOS Update):
+Fixed a bunch of issues. I now have a proper macOS system so I can now test PythonOS properly on Mac!
+Fixed playback issues. Unfortunately macOS needs Pyobjc installed, but start.py now checks for this and helps you install it. However, this is currently untested so it may work just fine, or it might explode.
+Fixed permission complaints when resetting PythonOS.
+Fixed *nix directory listings. Someone decided hard-coding "dir" was a good idea...
+Edit command fixed on macOS.
+Added new titles for macOS (and I would imagine Linux too) in start.py and PythonOS.py.
+Fixed user listings (grumble grumble dir on *nix grumble...)
+Updated build number and time. Added a couple more files for git to ignore. Updated readme slightly.
+
+1.9:
+Various tweaks.
 
 1.8d:
 Fixed critical login bug. Reduced the time it takes for the prompt to appear and blank inputs at the prompt no longer trigger the "unknown command" text.

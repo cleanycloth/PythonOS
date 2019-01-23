@@ -1,10 +1,33 @@
 from os import system, path, remove
 from platform import system as osdetect
+from sys import stdout
 from time import sleep
 global go
+
+try:
+    from playsound import playsound
+except:
+    if osdetect() == "Darwin":
+        print("Missing dependancy detected: pyobjc")
+        print("To continue with an error free use of PythonOS, you\nneed to install pyobjc.")
+        if input("Would you like me to do that for you? [Y/n] : ") == "n":
+            print("Installation denied, closing PythonOS.")
+            exit()
+        else:
+            try:
+                print("Running command: sudo pip3 install -U pyobjc\nPlease enter your password when prompted.")
+                system('sudo pip3 install -U pyobjc')
+                print("Setup complete, continuing startup.")
+            except:
+                print("Hm, something went wrong while installing Pyobjc.")
+                input("Press enter to close PythonOS.\nYou will need to install pyobjc manually.")
+                exit()
+
 if osdetect() == "Windows":
 	system('title PythonOS Launcher - Starting PythonOS...')
 	system('mode con: cols=80 lines=25')
+else:
+    stdout.write('\x1b]2;PythonOS Launcher - Starting PythonOS...\x07')
 def checkfile():
     if not path.exists("shutdown.txt"):
         file = open('shutdown.txt', "w")

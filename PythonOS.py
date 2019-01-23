@@ -9,6 +9,7 @@
 from time import sleep, asctime
 from os import path, system, getcwd, chdir, remove, rename
 from platform import system as osdetect
+from sys import stdout
 if osdetect() == "Windows":
     from winsound import Beep as beep
 else:
@@ -35,10 +36,10 @@ firstboot = 0
 sysdir = getcwd()
 owd = getcwd()
 owd2 = ""
-version = "1.9"
-build = "25/11/18 @ 10:01am"
-year = "2015-2018"
-compname = "pOS"
+version = "2.0"
+build = "23/01/19 @ 4:29pm"
+year = "2015-2019"
+compname = "pyOS"
 filelist = ['safeshutdown.txt','programlist.txt','Documents/m8ballusernames.txt','Documents/m8ballresults.txt','currentuser.txt','fastboot.txt','lastlogin.txt']
 soundwarning = 0
 if osdetect() == "Windows":
@@ -65,6 +66,8 @@ def workdir():
 def wintitle():
     if osdetect() == "Windows":
         system('title PythonOS VM - Version ' + version + ' (C) RotoWare ' + year) # This sets the command line window title.
+    else:
+        stdout.write('\x1b]2;' + 'PythonOS VM - Version ' + version + ' (C) RotoWare ' + year + '\x07')
 wintitle()
 def screenclear():
     if osdetect() == "Windows":    
@@ -231,7 +234,7 @@ while 1:
         user = open('currentuser.txt').read()
         writefiles("lastlogin.txt",asctime())
         _thread.start_new_thread( sounds, (4,) )
-    if not path.exists(owd + "/Users/" + user):
+    if not path.exists(owd + "/Users/" + user) and not res == 1:
         print("\n" + "-"*36 + "WARNING!" + "-"*36)
         print("Illegal permission level change detected. Reverting changes.")
         print("-"*36 + "WARNING!" + "-"*36 + "\n")
@@ -314,7 +317,10 @@ while 1:
             main = input("Please specify a file name: ")
         workdir()
         chdir('Documents')
-        owd2 = owd + "\\"
+        if osdetect == "Windows":
+            owd2 = owd + "\\"
+        else:
+            owd2 = owd + "/"
         main = main.replace("edit", "")
         system(runtext + "\"" + str(owd2) + main + "\"")
         chdir('..')
@@ -336,10 +342,16 @@ while 1:
         owd1 = getcwd()
         chdir(owd)
         chdir("Users")
-        system('dir')
+        if osdetect() == "Windows":
+            system('dir')
+        else:
+            system('ls')
         chdir(owd1)
     elif "dir" in main or main == "ls":
-        system('dir')
+        if osdetect() == "Windows":
+            system('dir')
+        else:
+            system('ls')
     elif main == "cd..":
         chdir("..")
     elif "cd " in main:

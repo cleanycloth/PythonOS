@@ -9,3 +9,5 @@ __pycache__
 lock
 #ignore ini files
 *.ini
+.vscode/settings.json
+.DS_Store
