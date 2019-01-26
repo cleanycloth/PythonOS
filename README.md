@@ -5,6 +5,7 @@ Prerequisites:
  - Some form of Python 3, but I'd recommend the latest. Python 2 is not, and will not be supported. It's crap.
  - For Linux, nano is required for the text editor, because I detest Vim. Sorry. And since macOS has it by default it makes things easier. One of these days I'll probably make a way of detecting your default editor or something, we'll see.
  - Windows has been tested for compatibility, but it *should* work on Linux and macOS as well.** Though, it's been a while since I last tested it.
+ - Pyobjc is needed for macOS to play sound correctly without spewing errors everywhere. PythonOS will attempt to do this for you, but be warned: this is untested. At worst it just won't install and you'll have no audio in PythonOS.
  
 **NOTE: macOS bugs have mostly been ironed out now. Linux remains mostly untested but should work better than version 1.9. See below for known issues.
 
@@ -18,15 +19,23 @@ Note: I am currently looking into removing the Kinesics text editor requirement.
 
 # Changelog:
 
+2.1 (The Colours and Edit Update):
+Colours are fixed now for macOS (and Linux too with any luck)!  
+Updated readme.  
+Added playsound.pyc to gitignore.
+Fixed file editing in macOS.
+
 2.0 (The macOS Update):
-Fixed a bunch of issues. I now have a proper macOS system so I can now test PythonOS properly on Mac!
-Fixed playback issues. Unfortunately macOS needs Pyobjc installed, but start.py now checks for this and helps you install it. However, this is currently untested so it may work just fine, or it might explode.
-Fixed permission complaints when resetting PythonOS.
-Fixed *nix directory listings. Someone decided hard-coding "dir" was a good idea...
-Edit command fixed on macOS.
-Added new titles for macOS (and I would imagine Linux too) in start.py and PythonOS.py.
-Fixed user listings (grumble grumble dir on *nix grumble...)
-Updated build number and time. Added a couple more files for git to ignore. Updated readme slightly.
+Fixed a bunch of issues. I now have a proper macOS system so I can now test PythonOS properly on Mac!  
+Fixed playback issues. Unfortunately macOS needs Pyobjc installed, but start.py now checks for this and helps you install it. However, this is currently untested so it may work just fine, or it might explode.  
+Fixed permission complaints when resetting PythonOS.  
+Fixed *nix directory listings. Someone decided hard-coding "dir" was a good idea...  
+Edit command fixed on macOS.  
+Added new titles for macOS (and I would imagine Linux too) in start.py and PythonOS.py.  
+Fixed user listings (grumble grumble dir on *nix grumble...) . 
+Updated build number and time.  
+Added a couple more files for git to ignore.  
+Updated readme slightly (edit: slightly more).  
 
 1.9:
 Various tweaks.

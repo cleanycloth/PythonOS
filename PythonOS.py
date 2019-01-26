@@ -320,7 +320,7 @@ while 1:
         if osdetect == "Windows":
             owd2 = owd + "\\"
         else:
-            owd2 = owd + "/"
+            owd2 = owd1 + "/"
         main = main.replace("edit", "")
         system(runtext + "\"" + str(owd2) + main + "\"")
         chdir('..')

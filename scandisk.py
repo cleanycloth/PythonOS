@@ -5,8 +5,12 @@ from platform import system as osdetect
 from colorama import init
 init()
 from colorama import Fore, Style, Back
+print(Fore.CYAN + Back.BLUE + Style.BRIGHT), sleep(0.01)
 if osdetect() == "Windows":
     system('color 1f'), sleep(0.05)
+    system('cls')
+else:
+    system('clear')
 print(Fore.CYAN + Back.BLUE + Style.BRIGHT + "\n\n    RotoWare ScanDisk"), sleep(0.01)
 print("    ----------------------------------------------------------------------"), sleep(0.01)
 if not "1" in open("safeshutdown.txt").read():

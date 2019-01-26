@@ -5,6 +5,7 @@
 *.limited
 #ignore compiled python stuff
 __pycache__
+playsound.pyc
 #ignore lock file
 lock
 #ignore ini files
