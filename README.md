@@ -26,7 +26,11 @@ Added playsound.pyc to gitignore.
 Fixed file editing in macOS.
 
 2.0 (The macOS Update):
+<<<<<<< HEAD
 Fixed a bunch of issues. I now have a proper macOS system so I can now test PythonOS properly on Mac!  
+=======
+Fixed a bunch of issues. I now have a proper macOS system so I can now test PythonOS properly on Mac!'  
+>>>>>>> 7788b1576edec301bd6d47fd5addedcf336f6ee8
 Fixed playback issues. Unfortunately macOS needs Pyobjc installed, but start.py now checks for this and helps you install it. However, this is currently untested so it may work just fine, or it might explode.  
 Fixed permission complaints when resetting PythonOS.  
 Fixed *nix directory listings. Someone decided hard-coding "dir" was a good idea...  
