@@ -19,14 +19,16 @@ Note: I am currently looking into removing the Kinesics text editor requirement.
 # Changelog:
 
 2.0 (The macOS Update):
-Fixed a bunch of issues. I now have a proper macOS system so I can now test PythonOS properly on Mac!
-Fixed playback issues. Unfortunately macOS needs Pyobjc installed, but start.py now checks for this and helps you install it. However, this is currently untested so it may work just fine, or it might explode.
-Fixed permission complaints when resetting PythonOS.
-Fixed *nix directory listings. Someone decided hard-coding "dir" was a good idea...
-Edit command fixed on macOS.
-Added new titles for macOS (and I would imagine Linux too) in start.py and PythonOS.py.
-Fixed user listings (grumble grumble dir on *nix grumble...)
-Updated build number and time. Added a couple more files for git to ignore. Updated readme slightly.
+Fixed a bunch of issues. I now have a proper macOS system so I can now test PythonOS properly on Mac!'  
+Fixed playback issues. Unfortunately macOS needs Pyobjc installed, but start.py now checks for this and helps you install it. However, this is currently untested so it may work just fine, or it might explode.  
+Fixed permission complaints when resetting PythonOS.  
+Fixed *nix directory listings. Someone decided hard-coding "dir" was a good idea...  
+Edit command fixed on macOS.  
+Added new titles for macOS (and I would imagine Linux too) in start.py and PythonOS.py.  
+Fixed user listings (grumble grumble dir on *nix grumble...) . 
+Updated build number and time.  
+Added a couple more files for git to ignore.  
+Updated readme slightly (edit: slightly more).  
 
 1.9:
 Various tweaks.
