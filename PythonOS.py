@@ -428,11 +428,14 @@ while 1:
         main = main.replace("open ", "")
         if main in open("programlist.txt").read():
             arg = input("Enter any required arguments, blank for none: ")
-            print("Starting", main + " with arguments: \"" + arg + "\".")
+            if len(arg) == 0:
+                print("Starting", main + " without arguments.")
+            else:
+                print("Starting", main + " with arguments: \"" + arg + "\".")
             chdir(owd1)
             system(runprog + " " + main + " " + arg)
         else:
-            print("Program not installed. Run apt-get to install it.")
+            print("Program not installed. Run \"apt install\" to install it.")
         chdir(owd1)
     elif main == "shutdown" or main == "exit":
         print("\nBroadcast from " + user1 + "@" + compname + " (pts/0) (" + asctime() + ")")
