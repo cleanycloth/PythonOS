@@ -2,12 +2,12 @@
 A quick and dirty operating system lookalike program made in Python, originally as a joke between myself and a friend in college a couple of years ago.
 
 Prerequisites:
- - Some form of Python 3, but I'd recommend the latest. Python 2 is not, and will not be supported. It's crap.
- - For Linux, nano is required for the text editor, because I detest Vim. Sorry. And since macOS has it by default it makes things easier. One of these days I'll probably make a way of detecting your default editor or something, we'll see.
+ - Some form of Python 3, but I'd recommend the latest. Python 2 is not, and will not be supported. Even Python is stopping support soon for 2.
+ - For Linux, nano is required for the text editor, because I detest Vim. Sorry. One of these days I'll probably make a way of detecting your default editor or something, we'll see.
  - Windows has been tested for compatibility, but it *should* work on Linux and macOS as well.** Though, it's been a while since I last tested it.
  - Pyobjc is needed for macOS to play sound correctly without spewing errors everywhere. PythonOS will attempt to do this for you, but be warned: this is untested. At worst it just won't install and you'll have no audio in PythonOS.
  
-**NOTE: macOS bugs have mostly been ironed out now. Linux remains mostly untested but should work better than version 1.9. See below for known issues.
+**NOTE: macOS bugs have mostly been ironed out now. Linux remains mostly untested but should work better than version 1.9.
 
 This program uses some external programs and code:
 
@@ -66,4 +66,4 @@ Start of GitHub changelog.
 
 # Known Issues
 
-Background colours for Scandisk and such are currently broken in Linux and macOS.
+None at the moment.
