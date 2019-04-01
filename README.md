@@ -6,6 +6,7 @@ Prerequisites:
  - For Linux, nano is required for the text editor, because I detest Vim. Sorry. One of these days I'll probably make a way of detecting your default editor or something, we'll see.
  - Windows has been tested for compatibility, but it *should* work on Linux and macOS as well.** Though, it's been a while since I last tested it.
  - Pyobjc is needed for macOS to play sound correctly without spewing errors everywhere. PythonOS will attempt to do this for you, but be warned: this is untested. At worst it just won't install and you'll have no audio in PythonOS.
+ - python-gst-1.0 is neede for Linux to play sound correctly. As of the 1/4/19, PythonOS does NOT install this for you.
  
 **NOTE: macOS bugs have mostly been ironed out now. Linux remains mostly untested but should work better than version 1.9.
 
@@ -65,5 +66,6 @@ Uploaded to GitHub, finally. Removed some unnecessary files from the upload and 
 Start of GitHub changelog.
 
 # Known Issues
-
-None at the moment.
+Version number not updated to 2.1.
+Colour issues with Scandisk when run with the "runtests" command. (color not found error in macOS/Linux)
+Sound issues with Linux (tested on Raspbian) - python-gst-1.0 missing (need to implement checks for that)
