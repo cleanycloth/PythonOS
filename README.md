@@ -1,10 +1,13 @@
 # PythonOS
-A quick and dirty operating system lookalike program made in Python, originally as a joke between myself and a friend in college a couple of years ago.
+A quick and dirty operating system lookalike program made in Python, originally as a joke between myself and a friend in college a few years ago.
+
+**Progress has paused on PythonOS for some time as I haven't had time to develop it. 
+**Version 2.1 may be missing the features added as stated in the changelog.
 
 Prerequisites:
- - Some form of Python 3, but I'd recommend the latest. Python 2 is not, and will not be supported. Even Python is stopping support soon for 2.
- - For Linux, nano is required for the text editor, because I detest Vim. Sorry. One of these days I'll probably make a way of detecting your default editor or something, we'll see.
- - Windows has been tested for compatibility, but it *should* work on Linux and macOS as well.** Though, it's been a while since I last tested it.
+ - Some form of Python 3, but I'd recommend the latest.
+ - For Linux, nano is required for the text editor currently. At some point I will add in the ability to ask the user on first run for their editor.
+ - Windows has been tested for compatibility, but it *should* work on Linux and macOS as well. Though, it's been a while since I last tested it.
  - Pyobjc is needed for macOS to play sound correctly without spewing errors everywhere. PythonOS will attempt to do this for you, but be warned: this is untested. At worst it just won't install and you'll have no audio in PythonOS.
  - python-gst-1.0 is neede for Linux to play sound correctly. As of the 1/4/19, PythonOS does NOT install this for you.
  
@@ -27,7 +30,7 @@ Added playsound.pyc to gitignore.
 Fixed file editing in macOS.
 
 2.0 (The macOS Update):
-Fixed a bunch of issues. I now have a proper macOS system so I can now test PythonOS properly on Mac!  
+Fixed a bunch of issues. I can now test PythonOS properly on a real Mac!  
 Fixed playback issues. Unfortunately macOS needs Pyobjc installed, but start.py now checks for this and helps you install it. However, this is currently untested so it may work just fine, or it might explode.  
 Fixed permission complaints when resetting PythonOS.  
 Fixed *nix directory listings. Someone decided hard-coding "dir" was a good idea...  
@@ -52,9 +55,7 @@ Fixed some spelling errors in the text adventure game.
 Changed the way edit works - instead of defaulting to the documents folder, it now allows you to edit any file in any directory.
 
 1.8:
-Finally removed the VLC requirement and switched to a much nicer audio player called Playsound. From over 300K to 4K, perfect.
-Sorry for all the commits, still working this thing out :P
-Some bugs may have crept in because of this, but it's currently 1:37am and I'm very tired.
+Finally removed the VLC requirement and switched to a much nicer audio player called Playsound. 300K to 4K file size reduction.
 
 1.7g:
 Changed file structure. Help files are now .hlp, permanent text files (such as commands.txt) are now .lst files, and temporary text files are still .txt.
@@ -65,7 +66,7 @@ Users folder was given a .gitignore to make sure GitHub actually sees it and upl
 Uploaded to GitHub, finally. Removed some unnecessary files from the upload and reset the program for first use.
 Start of GitHub changelog.
 
-# Known Issues
+# Known Issues - these may be incorrect currently
 Version number not updated to 2.1.
 Colour issues with Scandisk when run with the "runtests" command. (color not found error in macOS/Linux)
 Sound issues with Linux (tested on Raspbian) - python-gst-1.0 missing (need to implement checks for that)
