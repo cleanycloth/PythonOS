@@ -1,8 +1,9 @@
 # PythonOS
 A quick and dirty operating system lookalike program made in Python, originally as a joke between myself and a friend in college a few years ago.
 
-**Progress has paused on PythonOS for some time as I haven't had time to develop it. 
-**Version 2.1 may be missing the features added as stated in the changelog.
+**Progress has paused on PythonOS for some time as I haven't had time to develop it.**
+
+**Version 2.1 may be missing the features added as stated in the changelog.**
 
 Prerequisites:
  - Some form of Python 3, but I'd recommend the latest.
@@ -11,15 +12,13 @@ Prerequisites:
  - Pyobjc is needed for macOS to play sound correctly without spewing errors everywhere. PythonOS will attempt to do this for you, but be warned: this is untested. At worst it just won't install and you'll have no audio in PythonOS.
  - python-gst-1.0 is neede for Linux to play sound correctly. As of the 1/4/19, PythonOS does NOT install this for you.
  
-**NOTE: macOS bugs have mostly been ironed out now. Linux remains mostly untested but should work better than version 1.9.
+**NOTE: macOS bugs have mostly been ironed out now. Linux remains mostly untested but should work better than version 1.9.**
 
 This program uses some external programs and code:
 
  - Kinesics Text Editor by the Joe Lowe Project: http://turtlewar.org/projects/editor/
  - Colorama text colouring scripts by Arnon Yaari: https://github.com/tartley/colorama
  - Playsound sound playing script by Taylor Marks: https://github.com/TaylorSMarks/playsound
-
-Note: I am currently looking into removing the Kinesics text editor requirement. No ETA on this however.
 
 # Changelog:
 
@@ -67,6 +66,6 @@ Uploaded to GitHub, finally. Removed some unnecessary files from the upload and 
 Start of GitHub changelog.
 
 # Known Issues - these may be incorrect currently
-Version number not updated to 2.1.
-Colour issues with Scandisk when run with the "runtests" command. (color not found error in macOS/Linux)
-Sound issues with Linux (tested on Raspbian) - python-gst-1.0 missing (need to implement checks for that)
+- Version number not updated to 2.1.
+- Colour issues with Scandisk when run with the "runtests" command. (color not found error in macOS/Linux)
+- Sound issues with Linux (tested on Raspbian) - python-gst-1.0 missing (need to implement checks for that)
